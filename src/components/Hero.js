@@ -6,23 +6,23 @@ import Search from "./Search";
 const Hero = () => {
   return (
     <div
-      className="relative bg-cover bg-center h-screen "
+      className="relative bg-cover bg-center h-screen border-none overflow-hidden"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="flex items-center justify-center h-full bg-gray-900 bg-opacity-30">
         <div className="text-center flex flex-col items-center px-4">
           {/* Heading */}
           <h1 data-aos="fade-up" className="text-white flex   text-4xl font-heading font-bold uppercase md:text-6xl ">
-            J <p className="text-accent hover:text-secondary transition duration-300 ease-in-out"> D </p>K <span className="text-accent ml-3 hover:text-secondary transition duration-300 ease-in-out">Tours</span>
+            J <p className="text-accent hover:text-secondary transition duration-300 ease-in-out"> K </p>D<span className="text-accent ml-3 hover:text-secondary transition duration-300 ease-in-out">Tours</span>
           </h1>
 
           {/* Sub text */}
-          <p data-aos="fade-up" className="text-gray-100/70 text-lg mt-4 md:text-xl animate-fade-up delay-200">
+          <p data-aos="fade-up" className="text-gray-100 text-lg mt-4 md:text-xl animate-fade-up delay-200">
             Discover Beautiful Destinations, Create Unforgettable Memories
           </p>
 
           {/* Search */}
-          <div className="mt-8">
+          <div data-aos="fade-right" className="mt-8">
             <Search />
           </div>
         </div>

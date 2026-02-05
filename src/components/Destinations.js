@@ -25,12 +25,12 @@ const destinations = [
 
 const Destinations = () => {
   return (
-    <div className="py-16 bg-gray-100">
+    <div className="py-16 bg-[#f5f5f5] fade-in">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8">Popular Destinations</h2>
+        <h2 className="text-3xl font-bold playwrite-font  text-center mb-8">Dedicated to Turning Your Travel Dreams <br /><p className="text-accent hover:text-secondary transition duration-300 ease-in-out mt-5"> Into Reality</p></h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {destinations.map((destination) => (
-            <div key={destination.name} className="group bg-white rounded-lg shadow-lg overflow-hidden relative transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl fade-in">
+            <div key={destination.name} className="group  rounded-lg shadow-lg overflow-hidden relative transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl fade-in">
               <img src={destination.image} alt={destination.name} className="w-full h-64 object-cover" />
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">{destination.name}</h3>

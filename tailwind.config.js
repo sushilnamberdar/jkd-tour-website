@@ -12,6 +12,10 @@ module.exports = {
         'secondary-dark': '#388E3C',
         'accent': '#FFC107', // A warm yellow
       },
+      fontFamily: {
+        heading: ["Poppins", "sans-serif"],
+        body: ["Inter", "sans-serif"],
+      },
     },
   },
   plugins: [],

@@ -66,3 +66,23 @@
 .search-div{
   @apply flex items-center gap-3 border rounded-full  px-4 py-3 ml-2;
 }
+
+
+
+
+
+.playwrite-font { 
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3rem;
+  padding-bottom: 2rem;
+  text-align: center;
+pading-top: 2rem;
+margin-top: 2rem;
+}
+
+.text-navitems-color {
+  color: #ffffff;
+}

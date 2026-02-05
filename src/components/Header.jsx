@@ -50,9 +50,9 @@ export default function Header() {
   return (
     <header
       className={`
-        fixed top-0 left-0 right-0 bg-white/95 backdrop-blur shadow-sm z-40
+        fixed top-0 left-0 right-0 bg-white backdrop-blur shadow-sm z-40
         transition-all duration-300
-        ${shrink ? "py-1" : "py-3"}
+        ${shrink ? "py-1" : "py-1"}
       `}
     >
       {/* Top email bar */}
@@ -78,7 +78,7 @@ export default function Header() {
       <hr className="border-t border-gray-100/2 mb-1 w-full " />
 
       {/* Main navbar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between transition-all duration-300">
+      <div className="max-w-7xl mx-auto px-4 bg-primary rounded-full  sm:px-6 lg:px-8 flex items-center justify-between transition-all duration-300">
 
         {/* Logo */}
         <Link
@@ -100,7 +100,7 @@ export default function Header() {
           <div className="transition-all duration-300">
             <div
               className={`
-                font-semibold text-primary
+                font-semibold text-navitems-color
                 transition-all duration-300
                 ${shrink ? "text-sm" : "text-base"}
               `}
@@ -110,7 +110,7 @@ export default function Header() {
 
             <div
               className={`
-                text-gray-500 text-secondary   transition-all duration-300
+                 text-navitems-color   transition-all duration-300
                 ${shrink ? "text-[14px]" : "text-xs"}
               `}
             >
@@ -122,13 +122,13 @@ export default function Header() {
 
 
         {/* Desktop Navbar */}
-        <nav className="hidden md:flex items-center gap-6 text-sm">
-          <Link to="/" className=" text-secondary hover:text-primary">Home</Link>
+        <nav className="hidden   md:hidden  lg:flex items-center gap-6 text-sm">
+          <Link to="/" className=" text-navitems-color hover:text-accent">Home</Link>
           {/* Tours DROPDOWN */}
           <NavigationMenu className="relative">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="group flex text-secondary items-center text-lg gap-1 text-gray-700 hover:text-primary data-[state=open]:text-primary">
+                <NavigationMenuTrigger className="group flex text-navitems-color items-center text-lg gap-1  hover:text-accent data-[state=open]:text-accent">
                   Tours
                   <span className="ml-1 transition">
                     <ChevronDown className="h-4 w-4 block group-data-[state=open]:hidden" />
@@ -157,7 +157,7 @@ export default function Header() {
                           to="/tours/himachal"
                           className="nav-menu-item"
                         >
-                          <Mountain className="w-5 h-5 text-secondary" />
+                          <Mountain className="w-5 h-5 text-accent" />
                           <span className="font-lg">Himachal Tour Packages</span>
                         </Link>
                       </NavigationMenuLink>
@@ -181,7 +181,7 @@ export default function Header() {
                           to="/tours/honeymoon"
                           className="nav-menu-item"
                         >
-                          <Heart className="w-5 h-5 text-secondary" />
+                          <Heart className="w-5 h-5 text-accent" />
                           <span className="font-lg">Honeymoon Packages</span>
                         </Link>
                       </NavigationMenuLink>
@@ -198,7 +198,7 @@ export default function Header() {
           <NavigationMenu className="relative">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="group text-secondary  flex items-center gap-1 text-lg text-gray-700 hover:text-primary data-[state=open]:text-primary">
+                <NavigationMenuTrigger className="group text-navitems-color  flex items-center gap-1 text-lg  hover:text-accent data-[state=open]:text-accent">
                   Destinations
                   <span className="ml-1 transition">
                     <ChevronDown className="h-4 w-4 block group-data-[state=open]:hidden" />
@@ -226,7 +226,7 @@ export default function Header() {
                           to="/destinations/himachal"
                           className="nav-menu-item"
                         >
-                          <Mountain className="w-5 h-5 text-secondary" />
+                          <Mountain className="w-5 h-5 text-accent" />
                           <span className="font-lg">Himachal Pradesh</span>
                         </Link>
                       </NavigationMenuLink>
@@ -255,7 +255,7 @@ export default function Header() {
           <NavigationMenu className="relative">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="group text-secondary flex items-center gap-1 text-gray-700 hover:text-primary data-[state=open]:text-primary">
+                <NavigationMenuTrigger className="group text-navitems-color flex items-center gap-1  hover:text-accent data-[state=open]:text-accent">
                   Activities
                   <span className="ml-1 transition">
                     <ChevronDown className="h-4 w-4 block group-data-[state=open]:hidden" />
@@ -284,7 +284,7 @@ export default function Header() {
                           to="/activities/skiing"
                           className="nav-menu-item"
                         >
-                          <Snowflake className="w-5 h-5 text-secondary" />
+                          <Snowflake className="w-5 h-5 text-accent" />
                           <span className="font-lg">Skiing</span>
                         </Link>
                       </NavigationMenuLink>
@@ -308,7 +308,7 @@ export default function Header() {
                           to="/activities/tracking"
                           className="nav-menu-item"
                         >
-                          <Footprints className="w-5 h-5 text-secondary" />
+                          <Footprints className="w-5 h-5 text-accent" />
                           <span className="font-lg">Trekking</span>
                         </Link>
                       </NavigationMenuLink>
@@ -332,7 +332,7 @@ export default function Header() {
                           to="/activities/photography"
                           className="nav-menu-item"
                         >
-                          <Camera className="w-5 h-5 text-secondary" />
+                          <Camera className="w-5 h-5 text-accent" />
                           <span className="font-lg">Photography</span>
                         </Link>
                       </NavigationMenuLink>
@@ -349,7 +349,7 @@ export default function Header() {
           <NavigationMenu className="relative">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="group text-secondary flex items-center gap-1 text-lg text-gray-700 hover:text-primary data-[state=open]:text-primary">
+                <NavigationMenuTrigger className="group text-navitems-color flex items-center gap-1 text-lg  hover:text-accent data-[state=open]:text-accent">
                   Trip Types
                   <span className="ml-1 transition">
                     <ChevronDown className="h-4 w-4 block group-data-[state=open]:hidden" />
@@ -366,7 +366,7 @@ export default function Header() {
                           to="/trip-types/family"
                           className="nav-menu-item"
                         >
-                          <Users className="w-5 h-5 text-secondary" />
+                          <Users className="w-5 h-5 text-accent" />
                           <span className="font-lg">Family Tours</span>
                         </Link>
                       </NavigationMenuLink>
@@ -390,7 +390,7 @@ export default function Header() {
                           to="/trip-types/adventure"
                           className="nav-menu-item"
                         >
-                          <Mountain className="w-5 h-5 text-secondary" />
+                          <Mountain className="w-5 h-5 text-accent" />
                           <span className="font-lg">Adventure Tours</span>
                         </Link>
                       </NavigationMenuLink>
@@ -417,8 +417,8 @@ export default function Header() {
 
 
           {/* Standard Links */}
-          <Link to="/Why-Choose-Us" className="hover:text-primary text-secondary ">Why Choose Us</Link>
-          <Link to="/gallery" className="hover:text-primary text-secondary ">Gallery</Link>
+          <Link to="/Why-Choose-Us" className="hover:text-accent text-navitems-color ">Why Choose Us</Link>
+          <Link to="/gallery" className="hover:text-accent text-navitems-color ">Gallery</Link>
 
 
           <Link to="/contact" className="bg-accent text-black hover:bg-secondary hover:text-white px-4 py-2 rounded-md shadow hover:opacity-95 transition">

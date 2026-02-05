@@ -85,7 +85,7 @@ export default function MobileMenu() {
   };
 
   return (
-    <div className="md:hidden relative" ref={menuRef}>
+    <div className=" lg:hidden  relative" ref={menuRef}>
       {/* Hamburger Button */}
       <button
         onClick={() => setOpen(!open)}
@@ -104,7 +104,7 @@ export default function MobileMenu() {
 
       {/* Mobile Dropdown Menu */}
       {open && (
-        <div className={`fixed top-16  left-0 right-0 w-full bg-white shadow-xl border-t p-5 z-50 space-y-4 ${shrink ? "mt-10" : "mt-16"}`}>
+        <div className={`fixed top-16  left-0 right-0 w-full bg-white shadow-xl border-t p-5 z-50 space-y-4 ${shrink ? "mt-10" : "mt-12"}`}>
           <Link to="/" className="hover:text-primary">Home</Link>
 
           {/* TOURS DROPDOWN */}

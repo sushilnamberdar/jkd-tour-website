@@ -1,13 +1,19 @@
 import React, { useEffect } from 'react';
-import Hero from './components/Hero';
-import Destinations from './components/Destinations';
-import Tours from './components/Tours';
-import Gallery from './components/Gallery';
-import Testimonials from './components/Testimonials';
+import { Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import {
+  Home,
+  WhyChooseUs,
+  Contact,
+  ToursLayout,
+  DestinationsLayout,
+  ActivitiesLayout,
+  TripTypesLayout,
+  Gallery
+} from './components/pages/AllPages';
 
 
 function App() {
@@ -20,13 +26,18 @@ function App() {
     });
   }, []);
   return (
-    <div>
-      <Header/>
-      <Hero />
-      <Destinations />
-      <Tours />
-      <Gallery />
-      <Testimonials />
+    <div className="bg-[#f5f5f5]">
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/tours/*" element={<ToursLayout />} />
+        <Route path="/destinations/*" element={<DestinationsLayout />} />
+        <Route path="/activities/*" element={<ActivitiesLayout />} />
+        <Route path="/trip-types/*" element={<TripTypesLayout />} />
+        <Route path="/Why-Choose-Us" element={<WhyChooseUs />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
       <Footer />
     </div>
   );
