@@ -45,16 +45,21 @@ export function Carousel({ opts, plugins, className, children }) {
 export function CarouselContent({ children, className }) {
   return (
     <div className={cn("flex", className)}>
-      {React.Children.map(children, (child) => (
-        <div className="w-full flex-shrink-0">{child}</div>
-      ))}
+      {children}
     </div>
   );
 }
 
+
 export function CarouselItem({ children }) {
-  return <div className="w-full">{children}</div>;
+  return (
+    <div className="flex-[0_0_100%]">
+      {children}
+    </div>
+  );
 }
+
+
 
 export function CarouselNext({ className }) {
   const { emblaApi } = React.useContext(CarouselContext);

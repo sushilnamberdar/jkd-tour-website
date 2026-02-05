@@ -63,15 +63,15 @@
 }
 
 
-.search-div{
-  @apply flex items-center gap-3 border rounded-full  px-4 py-3 ml-2;
+.search-div {
+  @apply flex items-center gap-3 border rounded-full px-4 py-3 ml-2;
 }
 
 
 
 
 
-.playwrite-font { 
+.playwrite-font {
   font-family: "Dancing Script", cursive;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -79,10 +79,49 @@
   font-size: 3rem;
   padding-bottom: 2rem;
   text-align: center;
-pading-top: 2rem;
-margin-top: 2rem;
+  pading-top: 2rem;
+  margin-top: 2rem;
 }
 
 .text-navitems-color {
   color: #ffffff;
+}
+
+
+.destination-component-heading {
+
+
+  font-family: "Playpen Sans", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+
+
+.playpen-sans{
+  font-family: "Playpen Sans", cursive;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.auto-scroll {
+  animation: scroll-left 30s linear infinite;
+}
+
+.auto-scroll:hover {
+  animation-play-state: paused;
 }

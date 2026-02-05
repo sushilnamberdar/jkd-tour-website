@@ -1,17 +1,39 @@
 import React from 'react';
 import Hero from '../Hero';
 import Destinations from '../Destinations';
-import Tours from '../Tours';
 import Testimonials from '../Testimonials';
+import Tourss from './Tours';
+import AboutSection from './AboutSection';
+import WhyChooseUs from './WhyChooseUs';
+import WhyTravelWithUs from './WhyTravelWithUs';
+import PopularThingsToDo from './PopularThingsToDo';
+import RecommendedTours from './RecommendedTours';
+import SuccessStoriesScroll from './SuccessStoriesScroll';
+import TravelDesk from './TravelDesk';
+import CustomizeTrip from './CustomizeTrip';
+import TravelDeskPage from './TravelDeskPage';
+import GalleryZigZag from './GalleryZigZag';
+import FooterBrandSection from './FooterBrandSection';
 
 
 export default function Home() {
   return (
-    <>
+    <div>
       <Hero />
+      <Tourss/>
       <Destinations />
-      <Tours />
+      <AboutSection/>
+      <WhyChooseUs/>
+      <WhyTravelWithUs/>
+      <PopularThingsToDo/>
+      <RecommendedTours/>
+      <SuccessStoriesScroll/>
+      <TravelDesk/>
+      <CustomizeTrip/>
+      <TravelDeskPage/>
+      <GalleryZigZag/>
+      <FooterBrandSection/>
       <Testimonials />
-    </>
+    </div>
   );
 }

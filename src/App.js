@@ -14,6 +14,8 @@ import {
   TripTypesLayout,
   Gallery
 } from './components/pages/AllPages';
+import Tours from './components/pages/Tours';
+import FooterBrandSection from './components/pages/FooterBrandSection';
 
 
 function App() {
@@ -37,6 +39,7 @@ function App() {
         <Route path="/Why-Choose-Us" element={<WhyChooseUs />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
+          <Route path="/test" element={ <FooterBrandSection/>}/>
       </Routes>
       <Footer />
     </div>
