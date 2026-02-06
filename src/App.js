@@ -16,6 +16,7 @@ import {
 } from './components/pages/AllPages';
 import Tours from './components/pages/Tours';
 import FooterBrandSection from './components/pages/FooterBrandSection';
+import { CookieConsentProvider } from './components/Cookie/CookieConsent';
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
 
   return (
     <div className="bg-[#f5f5f5]">
+      <CookieConsentProvider/>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
