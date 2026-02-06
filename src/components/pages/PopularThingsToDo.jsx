@@ -42,7 +42,7 @@ const activities = [
 
 const PopularThingsToDo = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 text-center">
 
         {/* Heading */}

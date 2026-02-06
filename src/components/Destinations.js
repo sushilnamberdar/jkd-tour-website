@@ -30,7 +30,7 @@ const destinations = [
 
 const Destinations = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gray-50">
       <div data-aos="fade-up" className="max-w-7xl  mx-auto px-4">
 
         {/* Heading */}

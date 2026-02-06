@@ -41,7 +41,7 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-20 ">
+    <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
         {/* LEFT IMAGE */}

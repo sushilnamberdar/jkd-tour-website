@@ -33,6 +33,9 @@ const Hero = () => {
         className="absolute bottom-0 w-full h-40 bg-cover bg-center animate-fade-in delay-600"
         style={{ backgroundImage: `url(${bottomimag})` }}
       />
+      <div className="absolute bottom-0 w-full h-40 mt-[40px] bg-gradient-to-b from-transparent to-gray-50 animate-fade-in delay-600">
+        {/* Content goes here */}
+      </div>
     </div>
   );
 };

@@ -7,7 +7,7 @@ const FooterBrandSection = () => {
 
     return (
         <>
-            <div className="w-full  relative overflow-hidden bg-white">
+            <div className="w-full  relative overflow-hidden bg-gray-50">
 
                 {/* --- TOP SECTION (THE OVERLAPPING MOUNTAINS) --- */}
                 <div className="relative w-full   h-[150px] md:h-[200px] leading-[0]">
