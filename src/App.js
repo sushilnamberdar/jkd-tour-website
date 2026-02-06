@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import AOS from 'aos';
@@ -19,14 +19,22 @@ import FooterBrandSection from './components/pages/FooterBrandSection';
 
 
 function App() {
+  const location = useLocation();
+
   useEffect(() => {
     AOS.init({
-      duration: 800,     // animation duration
-      easing: "ease-out",
-      once: true,        // animate only once
-      offset: 100,       // trigger point
+      duration: 700,
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 120,
+      disable: () => window.innerWidth < 768, // huge win
     });
   }, []);
+
+  useEffect(() => {
+    AOS.refreshHard(); // IMPORTANT
+  }, [location.pathname]);
+
   return (
     <div className="bg-[#f5f5f5]">
       <Header />
@@ -39,7 +47,7 @@ function App() {
         <Route path="/Why-Choose-Us" element={<WhyChooseUs />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
-          <Route path="/test" element={ <FooterBrandSection/>}/>
+        <Route path="/test" element={<FooterBrandSection />} />
       </Routes>
       <Footer />
     </div>

@@ -139,9 +139,9 @@ const Footer = () => {
               <div className="flex gap-4 text-sm">
                 <img className="w-18 h-12" src={amexlogo} alt="American Express" />
                 <img className="w-18 h-12" src={visalogo} alt="Visa" />
-           
+
                 <img className="w-18 h-12" src={mastercardlogo} alt="MasterCard" />
-                
+
               </div>
             </div>
           </div>
@@ -150,8 +150,16 @@ const Footer = () => {
         {/* COPYRIGHT */}
         <div className="text-center text-sm text-gray-400 mt-12 pb-8">
           © Copyright 2025{" "}
-          <span className="text-white">Travel Monster</span> by{" "}
-          <span className="text-orange-400">WP Travel Engine</span>.
+          <span className="text-white"> Developed </span> by{" "}
+          <a
+            href="https://www.linkedin.com/in/sushilnamberdar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent hover:text-orange-400 transition"
+          >
+            @sushilnamberdar
+          </a>
+
         </div>
       </div>
     </footer>
