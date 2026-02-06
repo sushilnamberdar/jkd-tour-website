@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5519f5c9.css",
+    "main.js": "/static/js/main.770288a4.js",
+    "static/js/453.7ff2450c.chunk.js": "/static/js/453.7ff2450c.chunk.js",
+    "static/media/ice-mount.webp": "/static/media/ice-mount.1797bfbfee001a92ce12.webp",
+    "static/media/bg-cookies.webp": "/static/media/bg-cookies.c8bdb13692bbb2290bf5.webp",
+    "static/media/image-44.webp": "/static/media/image-44.eee6dcfd7201fb9a852b.webp",
+    "static/media/background.webp": "/static/media/background.c782b201183db07a48c9.webp",
+    "static/media/logo.webp": "/static/media/logo.ce47f63bb7abbfe7b1b9.webp",
+    "static/media/cloudbottom.png": "/static/media/cloudbottom.2a5c02eafe364c14d9ea.png",
+    "static/media/image-2.webp": "/static/media/image-2.4dd9d9c1dee8991c280a.webp",
+    "static/media/why-choose.webp": "/static/media/why-choose.8d15d281d752f9dabaee.webp",
+    "static/media/american-express.png": "/static/media/american-express.c0d9cac5039e03d254b8.png",
+    "static/media/visa.png": "/static/media/visa.ee66a9695dc3642156e7.png",
+    "static/media/Group.png": "/static/media/Group.ef23523286590915aa0b.png",
+    "static/media/cookies.svg": "/static/media/cookies.a701d8b131680ea54af44bd423ba2ed6.svg",
+    "index.html": "/index.html",
+    "main.5519f5c9.css.map": "/static/css/main.5519f5c9.css.map",
+    "main.770288a4.js.map": "/static/js/main.770288a4.js.map",
+    "453.7ff2450c.chunk.js.map": "/static/js/453.7ff2450c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5519f5c9.css",
+    "static/js/main.770288a4.js"
+  ]
+}
