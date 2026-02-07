@@ -17,6 +17,8 @@ import {
 import Tours from './components/pages/Tours';
 import FooterBrandSection from './components/pages/FooterBrandSection';
 import { CookieConsentProvider } from './components/Cookie/CookieConsent';
+import SearchPage from './components/pages/Filter/SearchPage';
+import SearcH from './components/pages/Filter/SearcH';
 
 
 function App() {
@@ -50,6 +52,8 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/test" element={<FooterBrandSection />} />
+        <Route path="/search" element={<SearcH/>} />
+        
       </Routes>
       <Footer />
     </div>
