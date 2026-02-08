@@ -78,7 +78,7 @@ export default function Header() {
       <hr className="border-t border-gray-100/2 mb-1 w-full " />
 
       {/* Main navbar */}
-      <div className="max-w-7xl mx-auto px-4 bg-primary rounded-full  sm:px-6 lg:px-8 flex items-center justify-between transition-all duration-300">
+      <div className="max-w-7xl mx-auto px-4 bg-gradient-to-r from-primary  to-secondary rounded-full  sm:px-6 lg:px-8 flex items-center justify-between transition-all duration-300">
 
         {/* Logo */}
         <Link
