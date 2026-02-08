@@ -39,7 +39,7 @@ function App() {
   }, [location.pathname]);
 
   return (
-    <div className="bg-[#f5f5f5]">
+    <div className="bg-gray-50">
       <CookieConsentProvider/>
       <Header />
       <Routes>

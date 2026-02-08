@@ -4,7 +4,7 @@ const Gallery = ({ images }) => {
   console.log("Gallery images:", images);
   return (
 
-    <div className="mb-8 mt-[10px]  max-w-6xl mx-auto">
+    <div className="mb-8 mt-[10px] bg-gray-50 max-w-6xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 lg:grid-cols-3 gap-4 h-[920px] md:h-[450px] lg:h-[500px] xlg:h-[550px]">
 
         {/* Big left image */}
