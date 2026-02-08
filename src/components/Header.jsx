@@ -211,7 +211,7 @@ export default function Header() {
                     <li >
                       <NavigationMenuLink asChild>
                         <Link
-                          to="/destinations/kashmir"
+                          to="/tours/kashmir"
                           className="nav-menu-item"
                         >
                           <MapPin className="w-5 h-5 text-primary" />
@@ -223,7 +223,7 @@ export default function Header() {
                     <li>
                       <NavigationMenuLink asChild>
                         <Link
-                          to="/destinations/himachal"
+                          to="/tours/himachal"
                           className="nav-menu-item"
                         >
                           <Mountain className="w-5 h-5 text-accent" />
@@ -235,7 +235,7 @@ export default function Header() {
                     <li>
                       <NavigationMenuLink asChild>
                         <Link
-                          to="/destinations/ladakh"
+                          to="/tours/ladakh"
                           className="nav-menu-item"
                         >
                           <Compass className="w-5 h-5 text-accent" />

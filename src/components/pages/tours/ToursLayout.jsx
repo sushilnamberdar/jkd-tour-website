@@ -9,6 +9,7 @@ import TourDetails from '../../TourDetails/TourDetails';
 import {tourDataHimachal} from '../../TourDetails/TourDataHimachal'; 
 import { tourData as tourDataAdventure } from '../../TourDetails/AdvantureTour';
 import { tourData as tourDataHoneymoon } from '../../TourDetails/HoneymoonPackage';
+import { tourData as tourDataLadak } from '../../TourDetails/TourDataLadak';
 export default function ToursLayout() {
   return (
     <Routes>
@@ -16,6 +17,7 @@ export default function ToursLayout() {
       <Route path="himachal" element={<TourDetails data={tourDataHimachal} />} />
       <Route path="adventure" element={<TourDetails data={tourDataAdventure} />} />
       <Route path="honeymoon" element={<TourDetails data={tourDataHoneymoon} />} />
+      <Route path="ladakh" element={<TourDetails data={tourDataLadak} />} />
     </Routes>
   );
 }
