@@ -185,7 +185,7 @@ const TourTabs = () => {
         <div className="mt-12">
 
             {/* TAB HEADERS */}
-            <div className="border-b flex gap-8 text-sm font-medium">
+            <div className="border-b flex gap-8 text-sm flex-wrap font-medium">
                 {tabs.map((tab) => (
                     <button
                         key={tab}

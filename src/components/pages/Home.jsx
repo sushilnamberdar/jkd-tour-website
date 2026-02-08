@@ -11,7 +11,6 @@ import SuccessStoriesScroll from './SuccessStoriesScroll';
 import TravelDesk from './TravelDesk';
 import CustomizeTrip from './CustomizeTrip';
 import GalleryZigZag from './GalleryZigZag';
-import FooterBrandSection from './FooterBrandSection';
 
 
 export default function Home() {
@@ -29,7 +28,6 @@ export default function Home() {
       <TravelDesk/>
       <CustomizeTrip/>
       <GalleryZigZag/>
-      <FooterBrandSection/>
     </div>
   );
 }

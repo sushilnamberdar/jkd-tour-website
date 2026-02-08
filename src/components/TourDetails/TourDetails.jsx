@@ -6,7 +6,7 @@ import Tour from "./Tour";
 
 const TourDetails = ({ data }) => {
   return (
-    <div className="mt-[150px] py-4 max-w-6xl mx-auto px-4">
+    <div className="mt-[150px] bg-gray-50 py-4 max-w-6xl mx-auto px-4">
       {/* tour images  */}
       <div className="mt-[10px] mb-8">
 

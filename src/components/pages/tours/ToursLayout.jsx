@@ -1,9 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import KashmirTours from './Kashmir';
-import HimachalTours from './Himachal';
-import AdventureTours from './Adventure';
-import HoneymoonTours from './Honeymoon';
+
 import { tourData } from '../../TourDetails/tourDataKashmir';
 import TourDetails from '../../TourDetails/TourDetails';
 import {tourDataHimachal} from '../../TourDetails/TourDataHimachal'; 
