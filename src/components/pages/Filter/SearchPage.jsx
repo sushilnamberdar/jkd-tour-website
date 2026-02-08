@@ -1,4 +1,4 @@
-import { useState , useEffect} from "react";
+import { useState, useEffect } from "react";
 import { useSearchParams } from 'react-router-dom';
 
 const BASE_DESCRIPTION = "Travel is the movement of people between relatively distant geographical locations, and can involve travel by foot, bicycle, automobile, train, boat, bus, airplane, or other means.";
@@ -382,6 +382,9 @@ export default function SearchPage() {
       <aside className="hidden md:block w-72 bg-gray-200 p-5 rounded-lg h-[700px] border-r">
         <h2 className="font-semibold text-lg mb-6">Filter By</h2>
 
+
+
+
         <div className="mb-6">
           <h3 className="text-sm font-semibold mb-2">By Price</h3>
           <label className="text-sm block mb-1">Up to ${price}</label>
@@ -465,49 +468,156 @@ export default function SearchPage() {
           </select>
         </div>
 
-        <div className="space-y-4">
-          {paginatedData.map((item) => (
-            <div key={item.id} className="flex flex-col md:flex-row bg-white rounded-lg shadow overflow-hidden">
-              <ImageCarousel images={item.images} />
 
-              <div className="p-4 flex-1">
-                {item.description && (
-                  <p className="text-sm text-gray-500 mb-2">{item.description}</p>
-                )}
-                <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-600">{item.location}</p>
-                <div className="flex gap-4 text-sm mt-3">
-                  <span>⏱ {item.duration} Days</span>
-                  <span>👤 {item.people} People</span>
-                  <span>⭐ {item.level}</span>
+        {/* button for mobile filer and code  */}
+
+        {/* Mobile Filter Button */}
+        <button
+          onClick={() => setShowMobileFilter(true)}
+          className="md:hidden mb-4 px-4 py-2 bg-blue-600 text-white rounded"
+        >
+          Open Filters
+        </button>
+
+        {/* Mobile Filter Drawer */}
+        {showMobileFilter && (
+          <div className="fixed inset-0 bg-black/40 z-50 md:hidden">
+            <div className="absolute left-0 top-0 h-full w-80 bg-white p-5 overflow-y-auto">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="font-semibold text-lg">Filters</h2>
+                <button onClick={() => setShowMobileFilter(false)}>✕</button>
+              </div>
+
+              {/* By Price */}
+              <div className="mb-6">
+                <h3 className="text-sm font-semibold mb-2">By Price</h3>
+                <label className="text-sm block mb-1">Up to ${price}</label>
+                <input
+                  type="range"
+                  min="500"
+                  max="3000"
+                  value={price}
+                  onChange={(e) => {
+                    setPrice(Number(e.target.value));
+                    setCurrentPage(1);
+                  }}
+                  className="w-full"
+                />
+
+                <hr className="my-4" />
+
+                {/* By Destination */}
+                <h3 className="text-sm font-semibold mb-2">By Destination</h3>
+                <div className="space-y-2">
+                  {[
+                    "All",
+                    "Kashmir",
+                    "Himachal",
+                    "Ladakh",
+                    "France",
+                    "Greece",
+                    "Iceland",
+                    "Japan",
+                    "Nepal",
+                  ].map((d) => (
+                    <label key={d} className="flex items-center gap-2 text-sm">
+                      <input
+                        type="radio"
+                        checked={destination === d}
+                        onChange={() => {
+                          setDestination(d);
+                          setCurrentPage(1);
+                        }}
+                      />
+                      {d}
+                    </label>
+                  ))}
                 </div>
               </div>
 
-              <div className="p-4 flex flex-col justify-center items-start md:items-end w-full md:w-auto">
-                {item.originalPrice && (
-                  <p className="text-sm line-through text-gray-400">From ${item.originalPrice}</p>
-                )}
-                <p className="text-xl font-bold">${item.price}</p>
-                {item.originalPrice && (
-                  <p className="text-sm text-green-600">
-                    You save ${item.originalPrice - item.price}
-                  </p>
-                )}
-                <button className="mt-2 px-4 py-2 bg-blue-600 text-white rounded">View Details</button>
-                <div className="mt-3 text-xs text-gray-600 text-right">
-                  <p className="font-semibold">Next Departures</p>
-                  {item.nextDepartures?.map((d) => (
-                    <p key={d}>{d} (Available)</p>
-                  ))}
+              {/* By Duration */}
+              <div className="mb-6">
+                <h3 className="text-sm font-semibold mb-2">By Duration</h3>
+                <label className="text-sm block mb-1">
+                  Up to {duration} Days
+                </label>
+                <input
+                  type="range"
+                  min="1"
+                  max="30"
+                  value={duration}
+                  onChange={(e) => {
+                    setDuration(Number(e.target.value));
+                    setCurrentPage(1);
+                  }}
+                  className="w-full"
+                />
+              </div>
+
+              <button
+                onClick={() => setShowMobileFilter(false)}
+                className="w-full mt-4 px-4 py-2 bg-blue-600 text-white rounded"
+              >
+                Apply Filters
+              </button>
+            </div>
+          </div>
+        )}
+
+
+        <div className="space-y-4">
+          {paginatedData.map((item) => (
+            <>
+              <div className="bg-white p-4 rounded-lg shadow" key={item.id}>
+                <div key={item.id} className="flex flex-col md:flex-row  rounded-lg shadow overflow-hidden">
+                  <ImageCarousel images={item.images} />
+
+                  <div className="p-4 flex-1">
+                    {item.description && (
+                      <p className="text-sm text-gray-500 mb-2">{item.description}</p>
+                    )}
+                    <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
+                    <p className="text-sm text-gray-600">{item.location}</p>
+                    <div className="flex gap-4 text-sm mt-3">
+                      <span>⏱ {item.duration} Days</span>
+                      <span>👤 {item.people} People</span>
+                      <span>⭐ {item.level}</span>
+                    </div>
+                  </div>
+
+                  <div className="p-4 flex flex-col justify-center items-start md:items-end w-full md:w-auto">
+                    {item.originalPrice && (
+                      <p className="text-sm line-through text-gray-400">From ${item.originalPrice}</p>
+                    )}
+                    <p className="text-xl font-bold">${item.price}</p>
+                    {item.originalPrice && (
+                      <p className="text-sm text-green-600">
+                        You save ${item.originalPrice - item.price}
+                      </p>
+                    )}
+                    <button className="mt-2 px-4 py-2 bg-blue-600 text-white rounded">View Details</button>
+                    <div className="mt-3 text-xs text-gray-600 text-right">
+                      <p className="font-semibold">Next Departures</p>
+                      {item.nextDepartures?.map((d) => (
+                        <p key={d}>{d} (Available)</p>
+                      ))}
+                    </div>
+
+                  </div>
+
                 </div>
-                <div className="mt-2 flex flex-wrap gap-1 justify-end">
+
+                <hr />
+                <div className="mt-2 bg-white flex flex-wrap gap-1 justify-end">
                   {item.availability?.map((m) => (
                     <span key={m} className="px-2 py-0.5 text-xs border rounded">{m}</span>
                   ))}
                 </div>
               </div>
-            </div>
+            </>
           ))}
+
+
         </div>
 
         {/* Pagination */}

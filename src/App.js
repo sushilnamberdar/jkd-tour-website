@@ -14,11 +14,11 @@ import {
   TripTypesLayout,
   Gallery
 } from './components/pages/AllPages';
-import Tours from './components/pages/Tours';
 import FooterBrandSection from './components/pages/FooterBrandSection';
 import { CookieConsentProvider } from './components/Cookie/CookieConsent';
-import SearchPage from './components/pages/Filter/SearchPage';
 import SearcH from './components/pages/Filter/SearcH';
+import TourDetails from './components/TourDetails/TourDetails';
+import {tourData} from  './components/TourDetails/tourDataKashmir';
 
 
 function App() {
@@ -51,8 +51,9 @@ function App() {
         <Route path="/Why-Choose-Us" element={<WhyChooseUs />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/test" element={<FooterBrandSection />} />
+        <Route path="/test" element={<TourDetails data={tourData} />} />
         <Route path="/search" element={<SearcH/>} />
+      
         
       </Routes>
       <Footer />

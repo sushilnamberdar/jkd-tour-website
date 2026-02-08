@@ -1,4 +1,3 @@
-import rect from "react";
 import SearchPage from "./SearchPage";
 
 const SearcH = () => {

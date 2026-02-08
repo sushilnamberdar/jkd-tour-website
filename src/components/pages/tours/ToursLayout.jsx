@@ -4,14 +4,18 @@ import KashmirTours from './Kashmir';
 import HimachalTours from './Himachal';
 import AdventureTours from './Adventure';
 import HoneymoonTours from './Honeymoon';
-
+import { tourData } from '../../TourDetails/tourDataKashmir';
+import TourDetails from '../../TourDetails/TourDetails';
+import {tourDataHimachal} from '../../TourDetails/TourDataHimachal'; 
+import { tourData as tourDataAdventure } from '../../TourDetails/AdvantureTour';
+import { tourData as tourDataHoneymoon } from '../../TourDetails/HoneymoonPackage';
 export default function ToursLayout() {
   return (
     <Routes>
-      <Route path="kashmir" element={<KashmirTours />} />
-      <Route path="himachal" element={<HimachalTours />} />
-      <Route path="adventure" element={<AdventureTours />} />
-      <Route path="honeymoon" element={<HoneymoonTours />} />
+      <Route path="kashmir" element={<TourDetails data={tourData} />} />
+      <Route path="himachal" element={<TourDetails data={tourDataHimachal} />} />
+      <Route path="adventure" element={<TourDetails data={tourDataAdventure} />} />
+      <Route path="honeymoon" element={<TourDetails data={tourDataHoneymoon} />} />
     </Routes>
   );
 }
