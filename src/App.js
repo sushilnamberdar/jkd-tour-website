@@ -14,12 +14,11 @@ import {
   TripTypesLayout,
   Gallery
 } from './components/pages/AllPages';
-import FooterBrandSection from './components/pages/FooterBrandSection';
 import { CookieConsentProvider } from './components/Cookie/CookieConsent';
 import SearcH from './components/pages/Filter/SearcH';
 import TourDetails from './components/TourDetails/TourDetails';
 import {tourData} from  './components/TourDetails/tourDataKashmir';
-
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const location = useLocation();
@@ -40,6 +39,7 @@ function App() {
 
   return (
     <div className="bg-gray-50">
+      <ScrollToTop />
       <CookieConsentProvider/>
       <Header />
       <Routes>
