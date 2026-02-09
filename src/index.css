@@ -62,11 +62,9 @@
   @apply rounded-lg hover:bg-primary/5 flex space-x-3 p-2 items-center text-secondary hover:text-primary transition-colors duration-200;
 }
 
-
 .search-div {
-  @apply flex items-center gap-3 border rounded-full px-4 py-3 ml-2;
+  @apply flex items-center gap-3 border rounded-full px-2 py-3;
 }
-
 
 
 
@@ -100,7 +98,7 @@
 
 
 
-.playpen-sans{
+.playpen-sans {
   font-family: "Playpen Sans", cursive;
   font-optical-sizing: auto;
   font-weight: 200;
@@ -113,6 +111,7 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -125,5 +124,3 @@
 .auto-scroll:hover {
   animation-play-state: paused;
 }
-
-

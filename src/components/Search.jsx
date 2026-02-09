@@ -11,11 +11,12 @@ const Search = () => {
       <div className="bg-white rounded-3xl lg:rounded-full flex flex-col lg:flex-row items-stretch shadow-xl max-w-6xl mx-auto">
 
         {/* Inputs */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 items-center py-4 px-4 lg:px-6 flex-1">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 items-center py-4 px-4 lg:px-6 flex-1">
 
           {/* Destination */}
           <div className="search-div focus-within:border-secondary focus-within:ring-1 focus-within:ring-secondary transition">
-            <MapPin className="w-5 h-5 text-primary" />
+            <MapPin className="w-5 h-5 text-primary shrink-0" />
+
 
             <select
               value={searchTerm}
