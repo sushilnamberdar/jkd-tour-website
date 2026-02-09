@@ -53,7 +53,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/test" element={<TourDetails data={tourData} />} />
         <Route path="/search" element={<SearcH/>} />
-      
+        <Route path='/contact' element={<Contact/>} />
         
       </Routes>
       <Footer />
