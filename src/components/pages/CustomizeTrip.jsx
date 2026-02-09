@@ -1,16 +1,66 @@
-import React from "react";
-import bgImage from "../assets/ice-mount.webp"; 
+import React, { useState } from "react";
+import bgImage from "../assets/ice-mount.webp";
+import toast from "react-hot-toast";
 
 const CustomizeTrip = () => {
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
+  const [dates, setDates] = useState("");
+  const [notes, setNotes] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!fullName || !email) {
+      toast.error("Name and email are required");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const res = await fetch("https://api.jkdtour.com/custom-trip.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName,
+          email,
+          whatsapp,
+          dates,
+          notes,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        toast.success("Custom trip request submitted!");
+        setFullName("");
+        setEmail("");
+        setWhatsapp("");
+        setDates("");
+        setNotes("");
+      } else {
+        toast.error(data.error || "Something went wrong");
+      }
+    } catch (err) {
+      toast.error("Server error. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
 
         {/* Main Card */}
         <div
-        aos-animate="fade-up"
-         data-aos="fade-up"
-         data-aos-duration="1000"
+          aos-animate="fade-up"
+          data-aos="fade-up"
+          data-aos-duration="1000"
           data-aos-delay="100"
           data-aos-easing="ease-in-out"
           className="  relative rounded-3xl overflow-hidden grid grid-cols-1 lg:grid-cols-2"
@@ -45,43 +95,59 @@ const CustomizeTrip = () => {
           {/* RIGHT FORM */}
           <div data-aos="fade-right" className="relative z-10 p-8 lg:p-10">
             <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <form className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5">
+
                 <input
                   type="text"
                   placeholder="Full name"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  required
                   className="w-full border-b border-gray-300 focus:border-primary outline-none py-2 text-sm"
                 />
 
                 <input
                   type="email"
                   placeholder="Email address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                   className="w-full border-b border-gray-300 focus:border-primary outline-none py-2 text-sm"
                 />
 
                 <input
                   type="text"
                   placeholder="Whatsapp number"
+                  value={whatsapp}
+                  onChange={(e) => setWhatsapp(e.target.value)}
                   className="w-full border-b border-gray-300 focus:border-primary outline-none py-2 text-sm"
                 />
 
                 <input
                   type="text"
                   placeholder="Dates"
+                  value={dates}
+                  onChange={(e) => setDates(e.target.value)}
                   className="w-full border-b border-gray-300 focus:border-primary outline-none py-2 text-sm"
                 />
 
                 <textarea
                   placeholder="Special req / notes"
                   rows="3"
+                  value={notes}
+                  onChange={(e) => setNotes(e.target.value)}
                   className="w-full border-b border-gray-300 focus:border-primary outline-none py-2 text-sm resize-none"
                 />
 
+
                 <button
                   type="submit"
-                  className="w-full mt-6 bg-primary hover:bg-secondary text-white py-3 rounded-full transition font-medium"
+                  disabled={loading}
+                  className="w-full mt-6 bg-primary hover:bg-secondary text-white py-3 rounded-full transition font-medium disabled:opacity-60"
                 >
-                  Submit Request
+                  {loading ? "Submitting..." : "Submit Request"}
                 </button>
+
               </form>
             </div>
           </div>
