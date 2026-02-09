@@ -1,5 +1,6 @@
 import React from "react";
 import { MapPin, Clock, Heart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const tours = [
   {
@@ -9,7 +10,7 @@ const tours = [
     days: "15 Days",
     price: 1350,
     oldPrice: 1400,
-    image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34",
+    image: "https://api.jkdtour.com/images/traveldream/france.webp",
     discount: "10% Off",
   },
   {
@@ -18,7 +19,7 @@ const tours = [
     location: "Japan",
     days: "7 Days",
     price: 1300,
-    image: "https://images.unsplash.com/photo-1549692520-acc6669e2f0c",
+    image: "https://api.jkdtour.com/images/traveldream/japan.webp",
   },
   {
     id: 3,
@@ -26,7 +27,7 @@ const tours = [
     location: "Australia",
     days: "6 Days",
     price: 1800,
-    image: "https://images.unsplash.com/photo-1506973035872-a4f23efde3d8",
+    image: "https://api.jkdtour.com/images/traveldream/australia.webp",
   },
   {
     id: 4,
@@ -36,16 +37,16 @@ const tours = [
     price: 1800,
     oldPrice: 2400,
     discount: "25% Off",
-    image: "https://images.unsplash.com/photo-1549880338-65ddcdfd017b",
+    image: "https://api.jkdtour.com/images/traveldream/nepal.webp",
   },
-   {
+  {
     id: 1,
     title: "Discover the Best of Europe in 15 Days",
     location: "France, Greece",
     days: "15 Days",
     price: 1350,
     oldPrice: 1400,
-    image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34",
+    image: "https://api.jkdtour.com/images/traveldream/greece.webp",
     discount: "10% Off",
   },
   {
@@ -54,7 +55,7 @@ const tours = [
     location: "Japan",
     days: "7 Days",
     price: 1300,
-    image: "https://images.unsplash.com/photo-1549692520-acc6669e2f0c",
+    image: "https://api.jkdtour.com/images/traveldream/japan1.jpeg",
   },
   {
     id: 3,
@@ -62,7 +63,7 @@ const tours = [
     location: "Australia",
     days: "6 Days",
     price: 1800,
-    image: "https://images.unsplash.com/photo-1506973035872-a4f23efde3d8",
+    image: "https://api.jkdtour.com/images/traveldream/australia1.jpeg",
   },
   {
     id: 4,
@@ -72,7 +73,7 @@ const tours = [
     price: 1800,
     oldPrice: 2400,
     discount: "25% Off",
-    image: "https://images.unsplash.com/photo-1549880338-65ddcdfd017b",
+    image: "https://api.jkdtour.com/images/traveldream/everest.jpg",
   },
 ];
 
@@ -145,9 +146,11 @@ const Tours = () => {
 
         {/* Button */}
         <div className="flex justify-center mt-12">
-          <button className="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-primary-dark transition flex items-center gap-2">
-            Explore All Tours →
-          </button>
+          <Link to="/search">
+            <button className="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-primary-dark transition flex items-center gap-2">
+              Explore All Tours →
+            </button>
+          </Link>
         </div>
 
       </div>
