@@ -1,5 +1,7 @@
 import { useState } from "react";
 import ContactExtras from "./ContactExtras";
+import toast from "react-hot-toast";
+
 
 export default function Contact() {
     const [fullName, setFullName] = useState("");
@@ -33,16 +35,18 @@ export default function Contact() {
             const data = await res.json();
 
             if (data.success) {
-                setStatus("success");
+                toast.success("Message sent successfully!");
                 setFullName("");
                 setEmail("");
                 setSubject("");
                 setMessage("");
             } else {
-                setStatus("error");
+                toast.error(data.error || "Something went wrong");
             }
         } catch (err) {
-            setStatus("error");
+            toast.error("Server not responding. Try again.");
+        } finally {
+            setStatus("");
         }
     };
 

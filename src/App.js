@@ -19,7 +19,7 @@ import SearcH from './components/pages/Filter/SearcH';
 import TourDetails from './components/TourDetails/TourDetails';
 import {tourData} from  './components/TourDetails/tourDataKashmir';
 import ScrollToTop from './components/ScrollToTop';
-
+import { Toaster } from 'react-hot-toast';
 function App() {
   const location = useLocation();
 
@@ -40,6 +40,7 @@ function App() {
   return (
     <div className="bg-gray-50">
       <ScrollToTop />
+      <Toaster/>
       <CookieConsentProvider/>
       <Header />
       <Routes>
