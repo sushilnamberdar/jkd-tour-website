@@ -42,12 +42,13 @@ export default function Booking() {
             const data = await res.json();
 
             if (data.success) {
-                toast.success("Booking request sent!");
+                toast.success("Booking request sent! WE WILL CONTACT YOU SOON");
                 setForm({
                     fullName: "",
                     email: "",
                     phone: "",
-                    tour: "",
+                    tripType: "",
+                    destination: "",
                     persons: 1,
                     date: "",
                     message: "",
