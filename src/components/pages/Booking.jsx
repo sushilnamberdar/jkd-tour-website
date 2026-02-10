@@ -105,7 +105,7 @@ export default function Booking() {
 
                     {/* RIGHT FORM */}
                     <div className="p-8 lg:p-12">
-                        <form className="space-y-5">
+                        <form onSubmit={handleSubmit} className="space-y-5">
 
                             {/* Name & Email */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
