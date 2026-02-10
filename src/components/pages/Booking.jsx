@@ -8,11 +8,11 @@ export default function Booking() {
         phone: "",
         tripType: "",
         destination: "",
-        tour: "",
         persons: 1,
         date: "",
         message: "",
     });
+
 
 
     const [loading, setLoading] = useState(false);
@@ -23,11 +23,12 @@ export default function Booking() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        if (!form.fullName || !form.email || !form.tour) {
+        console.log(form);
+        if (!form.fullName || !form.email || !form.tripType || !form.destination) {
             toast.error("Please fill required fields");
             return;
         }
+
 
         setLoading(true);
 
@@ -111,11 +112,18 @@ export default function Booking() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <input
                                     type="text"
+                                    name="fullName"
+                                    value={form.fullName}
+                                    onChange={handleChange}
                                     placeholder="Full name"
                                     className="input"
                                 />
+
                                 <input
                                     type="email"
+                                    name="email"
+                                    value={form.email}
+                                    onChange={handleChange}
                                     placeholder="Email address"
                                     className="input"
                                 />
@@ -124,13 +132,21 @@ export default function Booking() {
                             {/* Phone */}
                             <input
                                 type="text"
+                                name="phone"
+                                value={form.phone}
+                                onChange={handleChange}
                                 placeholder="Phone / WhatsApp number"
                                 className="input"
                             />
 
                             {/* Dropdowns */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <select className="input">
+                                <select
+                                    name="tripType"
+                                    value={form.tripType}
+                                    onChange={handleChange}
+                                    className="input"
+                                >
                                     <option value="">Trip Type</option>
                                     <option>Adventure</option>
                                     <option>Cultural</option>
@@ -140,7 +156,12 @@ export default function Booking() {
                                     <option>Trek</option>
                                 </select>
 
-                                <select className="input">
+                                <select
+                                    name="destination"
+                                    value={form.destination}
+                                    onChange={handleChange}
+                                    className="input"
+                                >
                                     <option value="">Destination</option>
                                     <option>Himachal</option>
                                     <option>Kashmir</option>
@@ -155,12 +176,30 @@ export default function Booking() {
 
                             {/* Date & Persons */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <input type="date" className="input" />
-                                <input type="number" min="1" placeholder="Number of persons" className="input" />
+                                <input
+                                    type="date"
+                                    name="date"
+                                    value={form.date}
+                                    onChange={handleChange}
+                                    className="input"
+                                />
+
+                                <input
+                                    type="number"
+                                    name="persons"
+                                    min="1"
+                                    value={form.persons}
+                                    onChange={handleChange}
+                                    placeholder="Number of persons"
+                                    className="input"
+                                />
                             </div>
 
                             {/* Notes */}
                             <textarea
+                                name="message"
+                                value={form.message}
+                                onChange={handleChange}
                                 rows="4"
                                 placeholder="Any special requests or notes..."
                                 className="input resize-none"
@@ -169,16 +208,14 @@ export default function Booking() {
                             {/* Button */}
                             <button
                                 type="submit"
-                                className="w-full mt-6 bg-primary hover:bg-primary-dark text-white py-4 rounded-full font-medium tracking-wide transition"
+                                disabled={loading}
+                                className="w-full mt-6 bg-primary hover:bg-primary-dark text-white py-4 rounded-full font-medium tracking-wide transition disabled:opacity-60"
                             >
-                                Submit Booking Request
+                                {loading ? "Submitting..." : "Submit Booking Request"}
                             </button>
 
-                            <p className="text-xs text-center text-gray-500 mt-4">
-                                Our travel expert will contact you within 24 hours.
-                            </p>
-
                         </form>
+
                     </div>
 
                 </div>
