@@ -32,7 +32,7 @@ export default function Booking() {
         setLoading(true);
 
         try {
-            const res = await fetch("https://api.jkdtours.com/book-tour.php", {
+            const res = await fetch("https://api.jkdtour.com/book-tour.php", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(form),
