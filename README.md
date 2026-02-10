@@ -34,7 +34,7 @@ You need to have Node.js and npm installed on your machine.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/sushilnamberdar/jkdtour.git
+   git clone https://github.com/sushilnamberdar/jkd-tour-website.git
    ```
 2. Install NPM packages
    ```sh

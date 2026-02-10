@@ -22,6 +22,8 @@ import ScrollToTop from './components/ScrollToTop';
 import { Toaster } from 'react-hot-toast';
 import Booking from './components/pages/Booking';
 import FloatingBookingButton from './components/FloatingBookingButton';
+import Faq from './components/pages/Faq';
+import Team from './components/pages/Team';
 function App() {
   const location = useLocation();
 
@@ -58,6 +60,8 @@ function App() {
         <Route path="/search" element={<SearcH/>} />
         <Route path='/contact' element={<Contact/>} />
         <Route path='/booking' element={<Booking/>}/>
+        <Route path='/faq' element={<Faq/>}/>
+        <Route path='/team' element={<Team/>}/>
       </Routes>
       <Footer />
       <FloatingBookingButton/>

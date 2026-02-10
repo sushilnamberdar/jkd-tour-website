@@ -5,6 +5,7 @@ import {
   MapPin,
   Star,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import visalogo from "./assets/visa.png";
 import mastercardlogo from "./assets/Mastercard.png";
@@ -13,9 +14,9 @@ import FooterBrandSection from "./pages/FooterBrandSection";
 
 const Footer = () => {
   return (
-    
     <>
-    <FooterBrandSection/>
+      <FooterBrandSection />
+      
       <footer className="bg-black text-gray-300 pt-20">
         <div className="max-w-7xl mx-auto px-4">
 
@@ -43,48 +44,55 @@ const Footer = () => {
             {/* DESTINATIONS */}
             <FooterColumn
               title="Destinations"
-              items={["Nepal", "USA", "Australia", "Philippines", "France", "Greece"]}
+              items={[
+                { label: "Kashmir", path: "/tours/kashmir" },
+                { label: "Himachal", path: "/tours/himachal" },
+                { label: "Ladakh", path: "/tours/ladakh" },
+                
+              ]}
             />
+
 
             {/* ACTIVITIES */}
             <FooterColumn
               title="Activities"
               items={[
-                "Sky Diving",
-                "Trekking",
-                "Skiing",
-                "Bird Watching",
-                "Cultural Heritage",
-                "Snorkeling",
+                { label: "Sky Diving", path: "/activities/skiing" },
+                { label: "Trekking", path: "/activities/trekking" },
+                { label: "Skiing", path: "/activities/skiing" },
+                { label: "Bird Watching", path: "/activities/trekking" },
+                { label: "Cultural Heritage", path: "/activities/skiing" },
+                { label: "Snorkeling", path: "/activities/trekking" },
               ]}
             />
+
 
             {/* TRIP TYPES */}
             <FooterColumn
               title="Trip Types"
               items={[
-                "Culinary Tours",
-                "Cruise Tours",
-                "Family Tours",
-                "Solo Travel Tours",
-                "Cultural Tours",
-                "Luxury Tours",
+                { label: "Family Tours", path: "/trip-types/family" },
+                { label: "Solo & Honeymoon Tours", path: "/trip-types/honeymoon" },
+                { label: "Adventure Tours", path: "/trip-types/adventure" },
+                { label: "Cultural Tours", path: "/trip-types/cultural" },
               ]}
             />
+
 
             {/* COMPANY */}
             <FooterColumn
               title="Company"
-              items={[
-                "Home",
-                "Blog",
-                "Our Team",
-                "FAQ’s",
-                "Contact Us",
-                "About Us",
-              ]}
               highlight="Home"
+              items={[
+                { label: "Home", path: "/" },
+                { label: "Our Team", path: "/team" },
+                { label: "FAQ’s", path: "/faq" },
+                { label: "Contact Us", path: "/contact" },
+                { label: "About Us", path: "/about" },
+              ]}
             />
+
+
           </div>
 
           {/* MIDDLE BOX */}
@@ -178,14 +186,17 @@ export default Footer;
 const FooterColumn = ({ title, items, highlight }) => (
   <div>
     <h4 className="text-white font-semibold mb-4">{title}</h4>
+
     <ul className="space-y-2 text-sm">
       {items.map((item, i) => (
-        <li
-          key={i}
-          className={`hover:text-orange-400 transition cursor-pointer ${highlight === item ? "text-orange-400" : ""
-            }`}
-        >
-          {item}
+        <li key={i}>
+          <Link
+            to={item.path}
+            className={`hover:text-orange-400 transition ${highlight === item.label ? "text-orange-400" : ""
+              }`}
+          >
+            {item.label}
+          </Link>
         </li>
       ))}
     </ul>
