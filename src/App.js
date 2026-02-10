@@ -20,6 +20,7 @@ import TourDetails from './components/TourDetails/TourDetails';
 import {tourData} from  './components/TourDetails/tourDataKashmir';
 import ScrollToTop from './components/ScrollToTop';
 import { Toaster } from 'react-hot-toast';
+import Booking from './components/pages/Booking';
 function App() {
   const location = useLocation();
 
@@ -55,7 +56,7 @@ function App() {
         <Route path="/test" element={<TourDetails data={tourData} />} />
         <Route path="/search" element={<SearcH/>} />
         <Route path='/contact' element={<Contact/>} />
-        
+        <Route path='/booking' element={<Booking/>}/>
       </Routes>
       <Footer />
     </div>

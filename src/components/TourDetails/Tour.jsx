@@ -15,9 +15,10 @@ import {
     Baby,
     User
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 
-const Tour = ({data}) => {
+const Tour = ({ data }) => {
     const archives = ["July 2025", "October 2022", "March 2022"];
     const categories = [
         "Adventure Travel",
@@ -27,7 +28,7 @@ const Tour = ({data}) => {
         "Solo Travel",
         "Travel Guide",
     ];
-  
+
     return (
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
 
@@ -117,7 +118,7 @@ const PricingCard = ({ data }) => {
 
             {/* Discount */}
             <span className="inline-block bg-orange-500 text-white text-xs px-3 py-1 rounded-full">
-               {data.discount}  % Off
+                {data.discount}  % Off
             </span>
 
             {/* Prices */}
@@ -149,7 +150,9 @@ const PricingCard = ({ data }) => {
 
             <p className="text-sm text-center text-gray-500">
                 Need help with booking?
-                <span className="text-blue-600 cursor-pointer"> Send Us A Message</span>
+                <Link to="/contact" className="text-blue-600 hover:underline ml-1">
+                    <span className="text-blue-600 cursor-pointer"> Send Us A Message</span>
+                </Link>
             </p>
         </div>
     );
