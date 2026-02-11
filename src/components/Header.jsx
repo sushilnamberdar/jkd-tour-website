@@ -418,7 +418,6 @@ export default function Header() {
 
           {/* Standard Links */}
           <Link to="/Why-Choose-Us" className="hover:text-accent text-navitems-color ">Why Choose Us</Link>
-          <Link to="/gallery" className="hover:text-accent text-navitems-color ">Gallery</Link>
 
 
           <Link to="/contact" className="bg-accent text-black hover:bg-secondary hover:text-white px-4 py-2 rounded-md shadow hover:opacity-95 transition">

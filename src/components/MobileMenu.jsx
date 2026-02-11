@@ -226,9 +226,6 @@ export default function MobileMenu() {
             Why Choose Us
           </Link>
 
-          <Link to="/gallery" className="block py-2 text-gray-700 hover:text-primary">
-            Gallery
-          </Link>
 
 
 
